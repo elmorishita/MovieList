@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace Ch04MovieList.Models
 {
@@ -17,5 +18,14 @@ namespace Ch04MovieList.Models
         [Required(ErrorMessage = "Please enter a rating.")]
         [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5.")]
         public int? Rating { get; set; }
+
+        [Required(ErrorMessage = "Please enter a genre.")]
+        public string GenreId { get; set; } = string.Empty;
+
+        [ValidateNever]
+        public Genre Genre { get; set; } = null!;
+
+        // a read-only property for the slug at the end of the URL
+        public string Slug => Name?.Replace(' ', '-').ToLower() + '-' + Year?.ToString();
     }
 }
