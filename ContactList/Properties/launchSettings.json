@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "Ch04MovieList": {
+    "ContactList": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

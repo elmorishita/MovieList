@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Ch04MovieList.Models;
+using ContactList.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,9 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Add EF Core DI
-builder.Services.AddDbContext<MovieContext>(options => 
+builder.Services.AddDbContext<PhoneContext>(options => 
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("MovieContext")));
+        builder.Configuration.GetConnectionString("PhoneContext")));
 
 // update the URLs to be lowercase and have a trailing slash
 builder.Services.AddRouting(options =>
