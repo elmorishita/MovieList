@@ -54,5 +54,10 @@ namespace Ch04MovieList.Models
                 }
                 );
         }
+
+        public static int AddStuff(int a, int b)
+        {
+            return a + b;
+        }
     }
 }
